@@ -1,0 +1,23 @@
+div {
+    width: 500px;
+    height: 500px;
+    background-color: khaki;
+    padding: 50px 20px 40px 10px; /*top right bottom left {clockwise from the top to the left }*/
+    margin-bottom: 30px;
+}
+
+a {
+    background-color: salmon;
+    padding: 20px 40px;
+    border: 2px solid purple;
+    border-radius: 10px;
+}
+
+.content {
+    width: 800px;
+    height: 200px;
+    background-color: khaki;
+    text-align: center;
+    margin-top: 30px;
+    padding: 50px;
+}

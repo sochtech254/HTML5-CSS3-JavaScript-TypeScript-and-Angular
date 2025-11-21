@@ -1,0 +1,498 @@
+Text-align guidance:
+Don't justify text, long blocks of text should be left-aligned and do not center large blocks of text.
+
+LINE-HEIGHT:
+Sets the height of text and is commonly used to set distance between multiple lines of text.
+line-height: 1.5;{unitless is just a number that multiplies the font size. Commonly used.} percentage; pixels; ems;
+line-height guidance:
+Headings should be <1.5 and regular text 1.5-2 to improve readability.
+
+LETTER-SPACING:
+Sets the horizontal space between characters.
+letter-spacing: 8px;{pixels commonly used} percentage; ems;
+No unitless value
+letter-spacing guidance:
+We often apply small negative px value to headings to improve readability.
+
+FONT-SIZE:
+Sets the size of the text.
+font-size: 16px;(commonly used) pt; in; cm; mm;
+Absolute units:
+Size is fixed and does not change in relation to parent elements
+Avoid using absolute units because they are static. Web pages are all about dynamic and adaptable design that can fit different screen sizes and resolutions.
+Relative units:
+Size is based on the size of a parent element and adjusts proportionally to changes in the parent element.
+Examples include % em rem vh vw
+Pixels:
+A single point of light on a digital display
+A CSS pixel has a length of 1/96 inch (0.0104 inch) hence 10px is 0.104 inch
+font-size guidance:
+Regular text should be 16px - 32px and headings can be >60px
+Use a type-scale which provides a structured hierarchy of font sizes to create visual consistency and limits choices.
+h1 -> >60px
+h2 -> 48px
+h3 -> 40px
+h4 -> 32px
+h5 -> 24px
+p -> 20px
+a -> 16px
+smaller -> 12px
+From bottom to top, one level to another is multiplication by 1.25
+
+TYPEFACE - A specific font
+Characters with consistent visual characteristics
+Typefaces are organised into groups:
+SERIF -> Extra details on the end of strokes e.g. TIMES. A classic feel used by brands to communicate luxury and reliability. Used for high-end products.
+SANS-SERIF -> Straight ends and much cleaner e.g. ARIAL. A modern and clean feel used by brands to communicate simplicity and clarity. Used majorly by tech companies.
+MONOSPACE -> Letters are the same width e.g. COURIER NEW. A technical feel used by rands to communicate accuracy and precision. Used for very technical products.
+CURSIVE -> Joining strokes or mimic handwriting e.g. COMIC SANS MS. A personal feel used to communicate with people on a more emotional level. Used for weddings and blogs.
+DISPLAY -> Attention grabbing and artistic e.g. IMPACT. A creative feel used by brands to communicate playfulness and rule-breaking. Mainly used by fun brands.
+FONT-FAMILY:
+Sets a prioritised list of font names(typeface) or font categories.
+font-family: 'Tahoma', sans-serif; Tahoma -> first choice, sans-serif -> fall back
+Fonts will only display in your browser if they are installed on your machine e.g Tahoma -> windows(99.9%), mac(91.9%)
+font guidance:
+To play safe pick a popular sans-serif font examples below. sans-serif is also a very popular choice for tech
+Roboto
+Open Sans
+Montserrat
+Poppins
+Inter
+Select one or two fonts, but no more.
+try poppins for headings and rubik for regular text
+Google fonts:
+Fonts are available online and do not rely on the fonts installed on an individual user's device
+Very easy to add to your projects
+1. Find font you like
+2. Embed font with a link tag in html
+3. Add font family in css
+url -> fonts.google.com
+
+Text Color:
+Named Colors:
+CSS includes 147 named colors that browsers recognise. RED SALMON YELLOW KHAKI BLUE AQUAMARINE GREEN OLIVE
+These should not be used as they are very limited and not suitable for professional projects
+Color Systems:
+A structured method for creating different colors using a set of primary colors and rules for mixing them.
+Subtractive color system:
+Commonly used in print and painting
+Start with white and apply colored pigments that absorb light
+Black when all mixed
+Additive color system:
+Commonly used in electronic displays
+Start with black and emit light at different intensities
+White when all mixed
+Pixel:
+A pixel is made of red, green and blue lights with adjustable intensities.
+RGB values range from 0(zero){minimum intensity} to 255{maximum intensity} Red(0-255) Green(0-255) Blue(0-255)
+RGB and Hexadecimal notation:
+Color values can be represented in either RGB or Hexadecimal notation e.g. rgb(152, 116, 249) Hexadecimal -> #9874F9
+The example above of notation is used across CSS for specifying colors for text, backgrounds, shadows and more.
+Hexadecimal is most commonly used
+Shades of grey:
+When all the channels of RGB have the same value we get a shade of grey e.g. rgb(64, 64, 64) #404040  rgb(136, 136, 136) #888888   rgb(192, 192, 192) #C0C0C0
+On the extremes to get white, rgb(255, 255, 255) #FFFFFF  and to get black, rgb(0, 0, 0) #000000
+CSS Color:
+Specifies the color of text
+color: #9874F9; rgb; rgba; hsl;
+hex is most commonly used
+color guidance:
+Have at least 2 colors in your color palette, a primary and grey color
+For both primary and grey color there can be tints(lighter versions of the base color), base color and shades(darker versions of the base color). Grey can be a dark version of a color.
+Primary colors are used to highlight important parts of a page and tints and shades can be used to create contrast.
+The grey color with tints and shades often used for fonts
+Color is used in images and illustrations for consistency
+Color is used throughout design for components and sections
+Adding a secondary color introduces variety and contrast often making designs more appealing
+Primary colors are typically used on dominant elements such as buttons, background colors, section headings, icons and more.
+Tertiary colors add further variety
+
+
+CSS SELECTORS:
+Selectors allow us to select HTML elements to apply CSS rules.
+Range of CSS Selectors:
+There is a large range of CSS selectors that allow us to apply styles from broad styling to specific visual details
+# -> Basic Selectors(commonly used)
+ul > li -> combinator selectors
+a:hover -> pseudo-class selectors
+::before -> pseudo-elements selectors
+Type Selectors:
+Selects elements based on their tag name e.g. h1 { font-size: 20px; color: blue;}
+type selector guidance:
+It is useful for setting global styles to ensure consistency
+The cascade:
+Means flows from one stage to the next.
+This is how styles declared later will take priority. e.g. h1 { color: blue; } h1 { color:green; } green overrides blue.
+Also, index.html -> <head> <link rel="stylesheet" href="app.css"> <link rel="stylesheet" href="app2.css"> </head>
+app.css -> h1 { font-size: 12px; } app2.css -> h1 { font-size: 52px } 52px overrides 12px
+Grouping Selectors:
+Selectors can be comma separated to apply shared styles e.g. h1 { color: blue; } h2 { color: blue; }
+h1, h2 { color: blue; }
+Grouping Selectors and cascading:
+We can use the css cascading to add new rules to previous rules
+h1 { font-size: 62px; color: #495057; } h2 {font-size: 48px; color: #495057;} can be rewritten as below using cascading to our advantage:
+h1, h2 { color: #495057; } h1 { font-size: 62px; } h2 { font-size: 48px; }
+The ID Selector:
+Selects an element based on a unique id attribute and can only be used once.
+The class selector:
+Selects one or more elements based on a class attribute that can be used multiple times.
+selector guidance:
+Classes are often preferred over ids because they offer greater flexibility and reusability.
+It is common to use type selectors for global styles and class selectors for more specific visual styles.
+Classes for components(piece of reusable ui e.g. buttons) are designed to be combined on a single html element for a modular approach to styling.
+Pseudo-classes:
+Defines styles for a specific state or condition of an html element.
+A keyword with a colon added to the end of a selector. e.g. a:hover, hover is a pseudo-class name
+State pseudo-classes:
+Dynamic styling based on user interaction and commonly used for hyperlinks.
+a:link -> Targets anchor tags that have not yet been visited
+a:visited -> Targets anchor tags that have been visited.
+a:hover -> Targets an element when the cursor is placed over it.
+a:active -> Targets an element when it is being clicked
+state pseudo-classes guidance:
+It is best practice to style the pseudo-classes of anchor tags instead of styling the anchor elements directly.
+Conditional pseudo-classes:
+Styling based on an elements position in relation to other elements e.g.
+li:first-child -> Targets the first child element
+li:last-child -> Targets the last child element
+li:nth-child(n) -> Targets child elements based on their position (every nth child)
+Combinator Selectors:
+Combines two or more selectors to target elements based on their positions relative to each other. e.g. below:
+div p -> DESCENDANT (CHILD) SELECTOR (used sometimes). Targets all children elements of a parent.
+div > p -> DIRECT DESCENDANT (CHILD) SELECTOR (rarely used). Targets only direct children elements of a parent.
+h1 + p -> ADJACENT SIBLING SELECTOR (rarely used). Targets an element directly after another element both nested within the same parent.
+h1 ~ p -> GENERAL SIBLING SELECTOR (rarely used). Targets multiple elements directly after another element both nested within the same parent.
+Conflicting Selectors:
+When styles are applied to the same element using a different type of selector the outcome is determined by specificity. e.g.
+<body>
+    <h1 class="heading">Banjo Skateboard</h1>
+</body>
+.heading { color:blue; }    h1 { color: green; }
+The h1 element and the .heading class point to the same selectors.
+Specificity determines the priority of a CSS rule when multiple rules apply to the same element.
+Specificity guidance:
+It is common to use the type selector for global styles and the class selector to override this for specific styling.
+CSS Inheritance:
+This is when properties set on parent elements are passed to their children by default.
+<div class="hero-section">
+    <h1>Asymmetrical beard</h1>
+    <p>Retro distillery banjo</p>
+</div>
+.hero-section { color: blue; } The blue color in the hero-section class type selector is inherited for both h1 and p elements. p { color: red; }
+Specific selectors will override inherited styles as inherited styles have a very low specificity. In the example above the p element selector will override the class selector.
+The p element selector has a higher specificity.
+What gets inherited? It is mainly text properties that are inherited from parent to child. Properties such as: color, font-weight, line-height, font-family
+inheritance guidelines:
+Global font-styles are set on the body elements so that all child text elements inherit styles by default.
+Next, set global font styles on type selectors which will override inherited properties.
+Inheritance is also often utilised for a container that requires specific text styling.
+Text-align affects block-level elements but has no impact on inline-level elements.
+When applying the text-align property to a block-level parent containing inline elements, all children will be impacted.
+The Universal Selector:
+Applies styles to all elements. Symbolized by * e.g. * { color: blue; border-top: 5px solid red; }
+the universal selector guidance:
+Primarily used for resetting default properties and is not typically used for applying specific styling.
+Universal Selector ve Body Tag Inheritance
+Body Tag & Inheritance { Only applies text properties, Used to set default text properties across  application }
+The universal selector { Applies all properties to all elements, Used to reset default styles }
+Pseudo-elements:
+Used to style a specific part of an element. e.g. h2::first-letter{ pseudo-selector name }
+For text-styling -> used to enhance visual appearance of text. e.g. ::first-letter  ::first-line{paragraph opening line}
+For selection -> Used to visually enhance the text a user selects. e.g. ::selection
+For content insertion -> Used for adding decorative elements without altering HTML structure. e.g. ::before ::after
+
+THE CSS BOX MODEL
+Describes how all HTML elements are treated as rectangular boxes.
+Each box has its own set of properties.
+The CSS box model also applies to container elements like divs and semantic elements.
+Padding -> Space between content and border & still part of the element. Content -> text, images, links, forms etc
+Border -> A line around the element & still part of the element.
+Margin -> Space outside the element, separating it from other elements.
+Background-Color property:
+Sets the background color of an element and applies to the content and any padding NOT the border.
+background-color: #339af0; other values can be: rgb rgba hsl hex(most commonly used).
+background-color guidance:
+Sometimes used to set the background color of entire page.
+Commonly used to set the background color of page sections.
+Commonly used in components(piece of reusable ui).
+Color vs Background Color:
+Color -> Applies to text elements e.g. color: #339af0;
+background-color -> Applies to the background of an element e.g. background-color: #339af0;
+Width & Height:
+Box model: Each rectangular box has height and width
+Default block-level element dimensions:
+By default block-level elements are just big enough to fit its contents vertically and stretches full width horizontally.
+The height of block-level elements such as h1 and p is set by font-size.
+Block-level elements span full width of the page.
+Block elements container such as div, article and section span full width of page. Height is the sum of font-size and some margin.
+Default inline-level element dimensions:
+By default inline-level elements are just big enough to fit its contents both vertically and horizontally.
+The height and width of inline elements such as anchor tag a and image tag img are determined by font-size of anchor tag and those of the img tag are determined by height and width of the img.
+Width & Height properties:
+The default box dimensions can be overwritten by the width & height properties. e.g. width: 500px; height: 100px;
+Can override default dimensions or set dimensions where none exist.
+Block-level sizing guidance:
+For individual elements such as h1, p, ul & li -> usually do not set height but let it be automatically determined. Margins, paddings & font-size determine the height.
+Width -> Usually do not set width which will stretch to fill the parent container
+For container elements such as div and section, height -> usually do not set height but let it be automatically determined.
+                                                width -> depending on the layout it can be common to set a width
+It is common to set the width manually but not the height.
+Inline-level sizing guidance:
+Width and height can be set on some inline-elements but not others.
+Some of the elements that you can apply width & height: img, input, select, textarea, button
+For img setting height or width will adjust the other dimension automatically to preserve aspect ratio. This ratio is between width and height.
+Some of the elements that you can't apply width and height: span, a, sub, sup
+For the a element it is common to use padding to create space around anchor text
+Padding:
+Padding is the space between the content of an element and its border to improve readability and visual design.
+Longhand padding:
+Sets the padding on individual sides. e.g. padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px;
+Shorthand padding:
+Sets the padding on all sides at once.e.g. padding: 20px; -> on all sides  padding: 10px 20px; -> vertical & horizontal
+padding: 10px 20px 5px; -> top, horizontal & bottom{uncommon}   padding: 10px 20px 5px 15px; -> top, right, bottom, left{each side - kinda common}
+padding guidance:
+Commonly used in buttons and text callouts to improve readability.
+Also commonly used in cards.
+Also commonly used on inputs.
+For padding inside buttons use a rule of thumb: padding on the horizontal doubles padding on the vertical.
+Border:
+A border creates a visible boundary around an HTML element and can enhance visual appearance and separation from other elements.
+Longhand border properties:
+Sets the individual border properties & applies to all four borders.
+width -> border thickness -> border-width: 5px; default value - 0px common value - px other values - em rem
+style -> border line style -> border-style: solid; default value - none common value - solid other values - dotted dashed double
+color -> border color -> border-color: red; default value - element color e.g. rgb hex
+Shorthand border properties:
+Sets all the border properties in one go & applies to all four borders. This is the more common practice. e.g. border: 5px solid red;
+Individual border properties:
+Sets all the border properties in one go & applies to one border at a time e.g. below:
+border-top: 6px solid purple;    border-right: 2px dashed blue;    border-bottom: 1px dotted red;    border-left: 10px double green;
+border guidance:
+Borders help with grouping related content
+Individual borders help separate sections
+Borders can create outline buttons which are commonly used alongside solid filled buttons.
+It is common to add a border on a filled button which matches its background color when used alongside an outline button.
+The filled button should have a border-color which is the same as the background color
+Border radius:
+Rounds the corners of an element border.
+Sets the border radius value. border-radius: 12px; other values: px{commonly used} em rem %
+Pills:
+Fully rounded corners are created from rectangles by setting border radius equal to half the elements height. So if the height: 100px; then border-radius: 50px;
+Circles:
+Circular elements are created from squares by setting border radius equal to half the elements height. So if the height: 100px; then border-radius: 50px;
+Because this is a square, this means that it has the same height as width;
+border radius guidance:
+Square corners are more formal.
+Rounding corners can be perceived as more friendly.
+Fully rounding corners can be perceived as playful.
+It is important to have consistent rounding across all elements.
+Box Sizing:
+Total box dimensions -> By default the total width and height of a box will be the sum of the content width and height, padding and border
+The box-sizing property modifies how the total width and height of an element are calculated. e.g. box-sizing: border-box; other values: content-box{default value} border-value{commonly used}
+Content-box -> The total dimensions is sum of content, padding and border. The set width & height will be smaller than the total width & height of the box. Content dimensions are unchanged.
+Border-box -> The total dimensions include content, padding and border. The set width & height will match the total width & height of the box. Content dimensions need to reduce.
+box-sizing guidance:
+Set the border-box on the universal selector. * { box-sizing: border-box; } -> sets border-box on all boxes. One of the first things to do in a new css document.
+Margin:
+This is the space outside of an element's border creating distance between it and neighboring elements.
+Longhand margin:
+Sets the margin on individual sides e.g. margin-top: 5px; margin-right: 20px; margin-bottom: 5px; margin-left: 20px;
+Shorthand margin:
+Sets the margin on all sides at once. see examples below:
+all sides -> margin: 20px; vertical & horizontal -> margin: 10px 20px; top, horizontal & bottom -> margin: 10px 20px 5px; each side -> margin: 10px 20px 5px 15px;
+margin guidance:
+Use margin to apply whitespace between groups of elements.
+Use margin to apply whitespace between sections.
+It is common to control spacing between elements with margin and other more modern techniques.
+Spacing system:
+A predefined spacing system simplifies the design process and ensures consistency. e.g. 5px 10px(base unit) 15px 20px 25px 30px 40px 50px 60px 70px 80px 90px 100px 125px 150px 200px 250px 300px 400px 500px
+Margin is typically used to help us separate between major sections.
+Display Property:
+All HTML elements are by default either a block or inline element
+Block elements -> Starts on a new line. Takes up full width of a page. Width & height can be set. Padding applies. Border applies. Margin applies. display: block; by default. e.g. <h1> <p> <ul> <li>
+Inline elements -> Does not start on a new line unless after a block element. Only occupies width of their content. Width & height cannot be set. Padding only pushes content
+horizontally. Border only pushes content content away horizontally. Margin only applies horizontally. display: inline; by default. e.g. <a> <img> <br> <input> <span>
+Block elements and the box model:
+Block elements follow the box model rules so applying any properties work as expected.
+Inline elements and the box model:
+Inline elements do not follow the box model rules so applying some properties do not work as expected. e.g for anchor tag the width & height cannot be set. The anchor tag assumes the
+width & height of the content. This is the case for inline elements.
+Padding applies but only pushes content away horizontally and not vertically.
+Margin only applies horizontally and not vertically.
+Display Property:
+Sets how the element is formatted and positioned. e.g. display: block;
+Other values: block{default values for block elements}, inline{default value for inline elements} inline-block, flex grid.
+Inline-block:
+Combines features of block and inline elements
+display: inline-block; Does not start on a new line. Only occupies width of their content. Width & height can be set. Padding applies. Border applies. Margin applies.
+inline-block guidance:
+It is common to apply inline-block to inline elements so they flow inline(next to each other) but all box properties(padding, border & margin) can be applied e.g two buttons side-by-side.
+Replaced inline elements:
+Inline elements where the content is sourced externally and is not part of the HTML markup. The difference between regular and replaced inline elements is as follows:
+Replaced inline elements same as regular inline elements do not start on a new line. Also, both occupy width of their content.
+Whereas regular inline elements width & height cannot be set, replaced inline elements width & height can be set.
+For replaced inline elements padding, borders & margin do not apply as expected. Whereas for replaced inline elements, padding, borders & margin apply as expected.
+Regular inline elements: <a> <span> <sub> <sup>
+Replaced inline elements: <img> <input> <select> <textarea>. Box properties do apply and hence no need for display: inline-block; property.
+Browser default properties:
+Browsers have built-in CSS default rules that style HTML elements. see below:
+<body>    -> 8px margin
+<h1>      -> 21px margin top & bottom,  32px font-size,  700 font-weight
+<p>       -> 16px margin top & bottom,  16px font-size,  400 font-weight
+<ol> <ul> -> 16px margin top & bottom, 40px left padding
+CSS Reset:
+It is very common to strip away the main default browser styles to give us a blank canvas to work from.
+Global resets :  * { box-sizing: border-box; margin:0; padding:0; }
+Element resets :   a { text-decoration: none; display: inline-block; }  ul, ol { list-style: none; }
+Normalize CSS:
+Creates uniform default styles for HTML elements without removing all styles like a reset does. This is a large CSS file added to your project. It is grabbed online.
+You get it online by typing normalize css on google search and clicking NORMALIZE.CSS which is the first link and then downloading the file.
+Main Container:
+Container: It is very common for a webpage to have a wrapper which adds margin left & right as well as centers all the content.
+To create a container, a suitable width is chosen to prevent content from excessively stretching on larger screen sizes.
+Centering the container:
+To center the container, calculate the remaining width and distribute the space to margin left and margin right equally.
+Auto:
+A value that enables the browser to automatically determines a property's size. e.g. height: auto;
+For images, automatically applies to the other dimension when setting width or height to preserve aspect ratio. e.g. img { width: 400px; height: auto; } the height auto property is applied
+behind the scenes.
+For margins, automatically calculates the remaining space inside a parent and used to center a child container. e.g. .container { width: 1200px; margin-left: auto; margin-right: auto; } The
+margin-left and margin-right auto centers the container.
+Using the shorthand margin property is concise and more common. e.g. .container { width: 1200px; margin: 0 auto; } same as applying auto to margin left and margin right with margin top and
+bottom set to (0)zero.
+Max Width:
+Ensures elements are responsive for different screen sizes. Width: 500px; sets a fixed width of 500px. max-width: 500px; sets an elements width that it won't exceed. In this case won't go
+above 500px.
+Block and Inline elements: max width behaves differently depending on the display property of the html element.
+Block elements <h1> <div> -> occupies full width of parent. width and height can be set.
+Regular inline elements <a> <span> -> only occupies width of their content. Width & height cannot be set. Need to change display to inline-block so we can apply min/max width.
+Replaced inline elements <img> <input> -> only occupies width of their content. width & height can be set.
+Max-width on block elements:
+Sets the maximum width an element can be while it can still go narrower. Assuming the maximum width of the browser is 1800px and the width has been set to 1200px or the max-width has been set to 1200px.
+Block elements stay at 1200px when browser is wider. When the width of the browser is reduced by use of chrome dev tools and the width had been set to 1200px. Block elements extend beyond the browser. If
+the max-width had been set to 1200px and the width of the browser  is reduced then the block element reduces when the browser is narrower.
+Max-width block element guidance:
+Using max-width on a main container ensures content does not go too wide on larger screens.
+Max-width on inline elements:
+Sets the maximum width an element can be while it won't go narrower. Assuming the width of the browser is 1800px and the width of the inline element has been set to 1200px. Inline element width stays
+at 1200px when the browser is wider. If the width of the browser is reduced in chrome dev tools in responsive manner, inline elements extend beyond the browser when it is narrower. Max-width has no
+impact on an inline element.
+Inline elements do not automatically expand to fill the width of their container. So setting the width 100% ensure they do take up the full width available. Allowing max-width if set to limit their size.
+max-width inline element guidance:
+Using max-width on images creates a responsive layout. You can't apply max-width without applying a width of 100%.
+Min-Width:
+Sets an elements width that it won't shrink below. e.g. min-width: 500px; ensures width won't go below 500px.
+Both maximum and minimum width ensure elements are responsive for different screen sizes. Also both behave differently depending on the display property of HTML element.
+Min-width on block elements:
+Sets the minimum width an element can be while it can still go wider.
+With the element width at 1200px and the browser's width at 1800px, when the browser narrows in chrome dev tools the block element extends beyond browser.
+With the element min-width at 1200px and the browser's width at 1800px, the element stretches along the whole width of the browser. when the browser narrows in chrome dev tools the  block element
+extends beyond browser.
+min-width block element guidance:
+Useful fo maintaining a section width in a grid layout so it does not become too narrow.
+Min-width on inline elements:
+Sets the minimum width an element can be while it can still go wider.
+min-width inline element guidance:
+Sometimes useful for spans as it ensures text does not become too narrow & improves visual consistency.
+Max and Min Height:
+height: 500px; -> sets a fixed height. max-height: 500px; -> sets an element's height that it won't exceed. Just like max-width, it can reduce in height.
+min-height: 500px; -> sets an element's height that it won't shrink below. The height can expand beyond 500px.
+Maximum and minimum properties:
+Max and Min width are more commonly used compared to max & min height due to their role in creating responsive layouts.
+max-height{least frequently used} -----> min-height -----> min-width -----> max-width {most frequently used}. All are more commonly applied to block elements especially for min and max height.
+Max width vs max height:
+max width and max height behave in fundamentally different ways. max-width -> based on its container, so it applies even without content. max-height -> only applies when content exceeds the limit.
+Overflow:
+Controls what happens to content that overflows an element's box e.g. overflow: hidden; other values visible(means overflow can happen. default value) scroll(introduces a scroll bar that will always be
+present even if there is no overflow) auto(a scrollbar only when necessary) and hidden(clips the content, so that any content that overflows will be cut out).
+It is more common to use overflow auto as opposed to overflow scroll because it is more versatile for other circumstances.
+max-height guidance:
+Used when you want to ensure elements do not exceed a certain height.
+min-height guidance:
+Used when you want to ensure elements maintain a minimum height regardless of the amount of content.
+
+
+CSS UNITS:
+Absolute and Relative units:
+Relative units are essential for responsive webpages so elements can dynamically adjust for different screen sizes.
+Absolute units -> size is fixed and does not change in relation to parent elements. e.g. px(used for specific cases) {pt in cm mm}uncommon.
+Pixels are still being used in border-radius, border, letter-spacing, logo and icons, max-width and shadows.
+Relative units -> size is based on the size of a parent element and adjusts proportionally to changes in the parent element. e.g. % em rem vh vw
+Relative units are more commonly used in web pages.
+Examples of where to use relative units: containers, box-model properties like margin and padding and font-size.
+Percentages:
+This is a unit that is always relative to some other value. There are two main use cases in css:
+i) Relative to a parent and is commonly used in css properties like, width, height, margin and padding. This is very common.
+ii) Relative to the element itself. This can be used on a property like a line-height. This is not very common. Example on the next line:
+Assuming you define a font-size of 20px on some text and the line-height assign a percentage of 200% then the line-height will assume 40px.
+percentage guidance:
+Percentages are used in conjunction with max-width on main containers so that the webpage is fully responsive. The max-width is used to control the width of the content and container on
+larger screens and percentage is used on the body so that when the webpage is accessed from a smaller screen prevents content going right up to the edges.
+Percentages are used in conjunction with max-width on standalone images so that the webpage is fully responsive. Max-width is mainly applied for larger screens and percentages mainly applied
+for smaller gadgets like phone. This is to make sure the webpage is responsive. Width set to 100% on smaller screens so image scales to full width of container. Main container values are set
+to less than 100% and inline elements such as images majorly set to 100%.
+It is common to set images inside a grid or flex container to 100% so it fills the cell and adapts responsively.
+There are cases when you want to set a button width to 100% so it fills its container and adapts responsively.
+Percentage values are used for fully rounded corners(border radius calculated automatically as half of container by giving it a value of 50%) as pixels require manual calculation. This is done on
+elements like buttons and images.
+Rems and Ems:
+Rems -> These are a unit relative to the root elements font size and are the key ingredient for creating responsive webpages. The html tag is the root element which wraps all other elements. The font-size
+of the root element is 16px. e.g. a { font-size: 2rem; } => 2 * 16px = 32px. The rem can also be used on non-font-size properties. e.g. margin, padding. We can change the default font-size of the root
+element by html { font-size: 8px; } and so therefore any element set to 2rems will be 16px.
+Working with a base 10px for rem units makes it simpler when thinking about sizing elements. html { font-size: 10px; } It is much better for scalability in web page responsiveness to set
+the font-size to 62.5% which is an equivalent to 10px since the default chrome font-size for the root element is set at 16px. e.g. html { font-size: 62.5%; } The 16px font-size is equivalent to 1 rem.
+rems guidance:
+Rems are commonly used on font-size, margins and paddings to create fully responsive webpages.
+Ems -> not frequently used as rems. This is a relative unit that is more context-specific(closer) compared to rems. Rems are relying on the root html element. Ems are not based on the root element.
+They are based on the element much closer to the specific element that you are styling. They are mainly used for typography - relative to the font-size of the parent e.g. font-size, line-height and
+letter-spacing. They are also used for other properties -> relative to the font-size of the element itself e.g. width, height, margin and padding.
+ems guidance:
+ems provide a higher level of precision for styling smaller components as sizing is based on font-size of the element itself.
+VW & VH:
+View-Height(VH) & View-Width(VW) are units that are a percentage of the browsers visible window. Assuming the dimensions of the browser are height: 1880px and width: 3000px. Then our element say a
+container containing all the html markup we give it dimensions height: 80vh will be 1800px * 80% = 1440px and width: 50vw will be 3000px * 50% = 1500px.
+vh and vw guidance:
+VH can be used on section height e.g. hero sections in conjunction with min-height so content is always above the fold. Also set the value to min-height property in conjunction with VH.
+VW can be useful for creating responsive text when it is a main standalone element and not confined within a container.
+
+
+CSS FUNCTIONS:
+These are a powerful tool for creating dynamic and maintainable styles in web design.
+CSS Variables:
+Allow us to store values to make it easier to maintain consistency and more easily make global style changes. They are also known as custom properties.
+Defining a variable -> variables are set using double slashes, variable name and stored value. e.g. --primary: #339af0;
+Using a variable -> background-color: var(--primary);
+CSS variables are set on the root pseudo-class e.g. :root { --primary: #339af0; } then variables will be used in multiple locations.
+Root pseudo-class:
+A special pseudo-class selector that matches the root element in a document's hierarchy. The use of root pseudo-class :root { --primary: #339af0; } is basically the same as html { --primary: #339af0; }
+But it is best practice to use root pseudo-class. There is a slight technical difference which makes the root pseudo-class more versatile.
+CSS calculations:
+We can perform dynamic calculations when setting values. e.g. calc function -> calc((100%/3) - 50px)
+variables and calculations -> It is common to use variable and calculations in combination. e.g. :root { --text-h: 50px; } h1 { font-size: calc(var(--text-h1) + 10vw); } this ensures that the font-size
+scales depending on the width of the browser.
+
+
+FLEXBOX
+The three major components of css:
+content -> inside the box e.g. font-size, font-weight, background-color
+box -> the box itself e.g. width & height, border, margin
+layout -> where boxes go e.g. flexbox, grid, position
+What is flexbox?
+Flexbox is a one-dimensional layout model making it simple to arrange items in rows or columns and distribute space.
+Flex container and flex items:
+Flexbox has two main components. The first is the flex container which is the parent element. Inside the flex container, we have items, the flex items. which are the children of the flex container.
+Display Flex:
+The display property {display: flex;} on a container element will activate flexbox's layout features on children element.  It is declared on flex container(parent).
+The values for display can include: block, inline, inline-block, flex, grid.
+Flexbox takes full control of the LAYOUT, their alignment and spacing.
+Main and Cross Axis
+
+
+
+
+
+
+
+
+
+

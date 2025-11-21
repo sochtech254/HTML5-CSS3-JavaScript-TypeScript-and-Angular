@@ -1,0 +1,33 @@
+div {
+    width: 500px;
+    height: 500px;
+    background-color: khaki;
+    /*border-width: 10px;*/
+    /*border-style: dotted;*/
+    /*border-color: black;*/
+
+    /*border: 10px double black;*/
+    /*border: 30px dashed red;*/
+
+    border-top: 10px solid green;
+    border-right: 20px dashed blue;
+    border-bottom: 5px dotted red;
+    border-left: 30px double purple;
+    margin-bottom: 50px;
+}
+
+.btn-filled {
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    padding: 20px 40px;
+    border: 10px solid blue;
+}
+
+.btn-outline {
+    text-decoration: none;
+    background-color: white;
+    color: blue;
+    padding: 20px 40px;
+    border: 10px solid blue;
+}

@@ -1,0 +1,17 @@
+.parent {
+    height: 500px;
+    width: 800px; /* try changing the width and observe the change it has on the child */
+    background-color: lightblue;
+}
+
+.child {
+    height: 50%;
+    width: 50%;
+    background-color: lightsalmon;
+}
+
+h1 {
+    font-size: 20px;
+    background-color: lightgreen;
+    line-height: 200%;
+}

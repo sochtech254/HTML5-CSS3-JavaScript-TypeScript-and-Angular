@@ -1,0 +1,21 @@
+.article p {        /* Also div p will work in the same way */
+    color: green;
+    font-size: 30px;
+}
+
+.article > p {
+    color: blue;
+    font-size: 30px;
+}
+
+h1 + p {
+    color: red;
+}
+
+h1 ~ p {
+    color: hotpink;
+}
+
+
+
+

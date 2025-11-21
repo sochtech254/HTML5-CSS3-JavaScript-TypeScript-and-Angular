@@ -1,0 +1,33 @@
+.card {
+    padding: 0;
+    margin: 0;
+}
+
+.card {
+    height: 200px;
+    min-width: 800px;
+    background-color: salmon;
+    margin-bottom: 30px;
+}
+
+.no-width {
+    background-color: lightcoral;
+    display: inline-block;
+    text-align: center;
+}
+
+.width {
+    background-color: lightgreen;
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+}
+
+.min-width {
+    background-color: lightskyblue;
+    display: inline-block;
+    text-align: center;
+    min-width: 100px;
+}
+
+

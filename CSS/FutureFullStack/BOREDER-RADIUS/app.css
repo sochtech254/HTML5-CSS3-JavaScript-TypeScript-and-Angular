@@ -1,0 +1,22 @@
+.border-radius{
+    width: 500px;
+    height: 200px;
+    background-color: plum;
+    border-radius: 20px;
+}
+
+.pill {
+    width: 500px;
+    height: 200px;
+    background-color: pink;
+    border-radius: 100px;
+    margin-top: 30px;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    background-color: peachpuff;
+    border-radius: 100px;
+    margin-top: 30px;
+}

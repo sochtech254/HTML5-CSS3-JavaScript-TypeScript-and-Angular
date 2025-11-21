@@ -1,0 +1,19 @@
+/* If you look at this box in the chrome dev tools by ctrl+shift+i you see that total width=920px and total height=520px */
+.box1 {
+    width: 800px;
+    height: 400px;
+    padding: 50px;
+    border: 10px solid black;
+    background-color: plum;
+    box-sizing: content-box; /*default value may not be needed*/
+}
+
+.box2 {
+    width: 800px;
+    height: 400px;
+    padding: 50px;
+    border: 10px solid black;
+    background-color: plum;
+    box-sizing: border-box;
+    margin-top: 30px;
+}

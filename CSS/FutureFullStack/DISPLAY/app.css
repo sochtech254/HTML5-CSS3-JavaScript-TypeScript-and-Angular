@@ -1,0 +1,33 @@
+div {
+    width: 500px;
+    height: 500px;
+    background-color: lightcoral;
+    padding: 50px;
+    border: 10px solid black;
+    margin: 100px;
+}
+
+/*.inline-element {
+    background-color: lightgreen;
+    padding-left: 100px;
+    padding-right: 100px;
+    border: 20px solid red;
+}*/
+
+.inline-element {
+    display: block; /* Try inline-block */
+    width: 400px;
+    height: 80px;
+    background-color: lightgreen;
+    padding: 80px 80px;
+    margin: 100px;
+    border: 20px solid red;
+}
+
+.replaced-inline-element {
+    width: 400px;
+    height: 50px;
+    padding: 100px;
+    border: 5px solid green;
+    margin: 50px;
+}
