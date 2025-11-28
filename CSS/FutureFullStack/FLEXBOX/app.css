@@ -1,9 +1,11 @@
 .flex-container {
     width: 800px;
-    height: 800px;
+    height: 800px;    /*Try commenting out the width and height properties*/
     background: lightgray;
     display: flex;
-    color: #ffffff;
+    flex-direction: row; /* try row row-reverse column-reverse */
+    justify-content: space-evenly; /* try out other values */
+    color: #fff;
     font-size: 30px;
 }
 

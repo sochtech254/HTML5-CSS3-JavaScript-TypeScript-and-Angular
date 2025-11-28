@@ -1,0 +1,43 @@
+/* Normal flow:
+.container {
+    background-color: lightgray;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    background-color: skyblue;
+    padding: 10px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px;
+}
+
+h1 {
+    text-align: center;
+    background-color: blue;
+    padding: 100px;
+    color: white;
+}
+
+p {
+    text-align: left;
+    margin-left: 1rem;
+}*/
+
+/*Flexbox*/
+.container {
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    width: 100px;
+}
+
+a {
+    height: 100px;
+    background-color: red;
+}

@@ -1,0 +1,41 @@
+body {
+    color: white;
+    font-size: 30px;
+}
+
+.flex-container {
+    background-color: lightgray;
+    height: 500px;
+    width: 1000px;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.flex-item-1{
+    width: 200px;
+    height: 100px;
+    background-color: blue;
+    order: 1;
+}
+
+.flex-item-2{
+    width: 200px;
+    height: 100px;
+    background-color: purple;
+    order: 2;
+}
+
+.flex-item-3{
+    width: 200px;
+    height: 100px;
+    background-color: red;
+    order: -1;
+}
+
+.flex-item-4{
+    width: 200px;
+    height: 100px;
+    background-color: green;
+    order: 3;
+}

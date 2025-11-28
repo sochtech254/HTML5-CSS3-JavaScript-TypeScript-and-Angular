@@ -1,0 +1,45 @@
+.flex-container {
+    width: 800px;
+    height: 100vh;
+    background: lightgray;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 30px;
+    align-items: center;
+    gap: 50px;
+    flex-direction: column;
+}
+
+.flex-item-1 {
+    /*width: 200px;*/
+    /*height: 100px;*/
+    background-color: blue;
+    font-size: 90px;
+    /*margin-right: 50px;*/
+}
+
+.flex-item-2 {
+    /*width: 50px;*/
+    /*height: 300px;*/
+    background-color: purple;
+    font-size: 200px;
+    padding: 40px;
+    /*margin-right: 50px;*/
+}
+
+.flex-item-3 {
+    /*width: 100px;*/
+    /*height: 150px;*/
+    background-color: red;
+    font-size: 150px;
+    /*margin-right: 50px;*/
+}
+
+.flex-item-4 {
+    /*width: 150px;*/
+    /*height: 50px;*/
+    background-color: green;
+    font-size: 120px;
+/*    margin-right: 50px;*/
+}

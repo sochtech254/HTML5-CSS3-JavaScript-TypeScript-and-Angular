@@ -1,0 +1,37 @@
+body {
+    color: white;
+    font-size: 30px;
+}
+
+.flex-container {
+    background-color: lightgray;
+    height: 500px; /*Try commenting the height property*/
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap-reverse; /*try out other values with height property commented and uncommented*/
+}
+
+
+.flex-item-1{
+    width: 300px;
+    height: 100px;
+    background-color: blue;
+}
+
+.flex-item-2{
+    width: 300px;
+    height: 100px;
+    background-color: purple;
+}
+
+.flex-item-3{
+    width: 300px;
+    height: 100px;
+    background-color: red;
+}
+
+.flex-item-4{
+    width: 300px;
+    height: 100px;
+    background-color: green;
+}

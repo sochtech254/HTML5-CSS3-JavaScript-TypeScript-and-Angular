@@ -485,8 +485,273 @@ Display Flex:
 The display property {display: flex;} on a container element will activate flexbox's layout features on children element.  It is declared on flex container(parent).
 The values for display can include: block, inline, inline-block, flex, grid.
 Flexbox takes full control of the LAYOUT, their alignment and spacing.
-Main and Cross Axis
+Main and Cross Axis:
+The main axis is the primary direction in which flex items are laid out and cross axis determines distribution on secondary axis.
+Flex Direction:
+Controls orientation of the main axis. It is set on the flex container. e.g. flex-direction: row; {row is the default value. Items align from left to right} other values include row-reverse(items
+align from right to left), column{changes the orientation of the main axis from top to bottom and the cross axis from left to right}, column-reverse{flips the direction of the main axis to go from bottom
+to top with the cross axis still going from left to right}
+flex-direction guidance:
+In most cases flex-direction is set to row or column. You do not explicitly need to set flex-direction to row as it is the default value.
+Normal Flow vs FlexBox
+When flexbox is applied to a container it takes control of the alignment of children.
+Normal flow -> Spacing and alignment are determined by inherit properties of block and inline elements. Block and inline elements behave differently in normal flow.
+Note in normal flow the main idea is that positioning and size is mainly determined by whether an element is a block or inline element.
+Flexbox -> Flexbox overrides default behavior of block and inline elements with spacing and alignment controlled by flexbox properties.
+Normal flow and alignment:
+Applying text-align to a block-level parent will impact both block and inline children through different mechanisms.
+Applying text-align: center; directly to an inline element won't center it.
+In flexbox container, applying box model properties such as height, margin and padding to inline elements works.
+Applying text-align: center; to a flex container won't align all inline elements such as an image at the center of the flex container. In normal flow, everything is centered.
+text-align: center; is no longer responsible for alignment inside a flex container.
+Aligning and Spacing:
+Flexbox offers a powerful way to space and align content
+Flex container size -> understanding a flex container's dimensions is essential for visualising how flex items will be positioned. When thinking about the size of a flex container there are two
+categories: 1. General Block container -> Block element extends full width of the container. Height of the flex container is being determined by the flex items. This means that there is no space
+between the largest flex item and the container. 2. Container with a set width or height -> In this container there is a set width or height of the flex container. This mean that there may be
+space between the largest flex item and the container. This space may be vertically or horizontally within the container.
+Justify Content:
+Sets how flex items are positioned along the main axis. It is set on the container and not the flex items. e.g. justify-content: flex-start;(default value) other values include flex-end, center,
+space-between, space-around and space-evenly.
+justify content guidance:
+Often used to align and space navigation bars.
+Can be used to align entire sections.
+Often used for spacing and alignment of simple one-dimensional components.
+Align items:
+Sets how flex items are positioned along the cross axis. Set on the flex container e.g. align-items: stretch;{default value}. Other values include, align-items: flex-start; align-items: flex-end;
+align-items: center; align-items: baseline;
+Justify-content is about spacing and alignment along the main axis and align-items is about positioning and spacing along the cross-axis.
+The Flex Container Axis:
+                            ^
+                            |
+                            |
+----------------------------|----------------------------> main axis (use justify-content to space and align items along the main axis)
+                            |
+                            |
+cross-axis(use align-items to position and space items along the cross-axis)
+When you set a specific height on a flex-item, the align-items: stretch; property no longer applies.
+Align items and Shifting the main axis:
+When no height is set on the container, its height is sum of flex item's height and justify content will have no impact.
+When height is set on the container, there can be additional space so justify content will have an impact.
+align-items guidance:
+Commonly used on navigation menus and footers.
+Often used to positioning items inside a component in a flex row.
+Flexbox and the Box model:
+Box model properties can still be used in a flexbox layout to control spacing. Margin can be used to space items and padding can be used in flex items.
+Gap Property:
+Sets uniform spacing between flex items on the main axis. Set on the flex container. e.g. gap: 24px; This can also be used when the main axis is shifted.
+margin and gap guidance:
+Margin us used when you want different spacing values between flex items.
+Gap is used when you want uniform spacing values between flex items. This is the more commonly used property.
+Nested Flexbox:
+It is common to have a flexbox layout inside another flexbox layout.
+A flex item within a flex container can also function as a flex container itself, allowing for multi-level flex layouts.
+nested flexbox guidance:
+Commonly used on navigation menus and footers.
+Also commonly used in sections and components.
+Centering:
+Flexbox offers a modern & flexible approach to centering items vertically and horizontally.
+horizontal centering a container: 1. Box model -> Margin can be applied left and right to horizontally center child containers. e.g. margin: 0 auto; applied on child container. 2. Flexbox -> Flex
+properties make it simple to horizontally center flex items. Main axis in row - justify-content: center; main axis in column - align-items: center; This works even when flex container does not have set
+width. This  is because the flex container is most likely a block element which by default will extend the full width of the page.
+Horizontal centering content inside a container: 1. Box model -> Using padding to create internal space left and right gives the illusion that content inside a container is centered. e.g. padding:
+0 200px; The padding property is applied on the child container. 2. Flexbox -> Box model properties still apply on flex items, so padding can still be used to create internal horizontal space. e.g.
+padding: 0 200px; In the 2 ways, content inside container is centered.
+Vertical centering  content in a container:
+This works when the parent container has a set height. If the width is not set, then it assumes the full width of the page. 1. Box model -> There is no easy way to vertically center a child
+container inside a parent container with a set height. 2. Flexbox -> Flexbox properties make it simple to vertically center flex items when the parent container has a set height. Using main axis
+in row, and cross-axis in column, align-items: center; It is in the cross-axis that we vertically center. If the main axis is in column, justify-content: center;
+It also works when the parent container has no set height. 1. Box model -> Padding can be applied to the top and bottom of the child container. e.g. padding: 200px 0; Padding property is applied
+on the child container. 2. Flexbox -> If the parent container has no set height, we can't use the flexbox properties such as justify-content and align-items. Box model properties still apply on flex
+items, so padding can be used to create internal vertical space. e.g. padding: 200px 0; The padding property is applied on the flex item.
+centering guidance  :
+horizontal centering guidance -> margin is often used to establish a web page's main container as it is a simple method for horizontal centering. It is sometimes used for regular content containers.
+                                 flexbox properties make it simple to horizontally center regular content containers.
+                                 padding is used to create equal internal space left and right around containers like cards and elements like anchor tags. Can also be used to create equal internal space
+                                 left and right on flex containers.
+vertical centering guidance -> flexbox properties are often used to vertically center UI elements inside a flex container that has a set height.
+                               padding is used to create equal internal space top and bottom around containers like cards and elements like anchor tags. Can also be used to create equal internal space top
+                               and bottom on flex containers.
+                                       Box Model                                                            Flexbox
+Horizontally centering                 margin 0 auto; used to center main page containers                   justify-content: center; align-items: center;
+a container                            and sometimes regular content containers                             Used to horizontally center regular content containers.
 
+Horizontally centering                                                                padding: 0 200px;
+content inside a container             Used for creating equal horizontal space around content inside a container. Applies to both box model and flexbox property.
+
+Vertically centering a                 No easy way.                                                         justify-content: center; align-items: center;
+container                                                                                                   either of the above depending on the orientation of the main axis.
+                                                                                                            Used to vertically center regular content containers.
+
+Vertically centering                                                                  padding: 200px 0;
+content inside a container             Used for creating equal vertical space around content inside a container. Applies to both box model and flexbox property.
+Flex Children:
+flex-item properties -> Flexbox also has properties that control the behavior and positioning of flex-items. Flex container{display: flex; flex-direction: column; justify-content: space-between;
+align-items: center; gap: 2rem;} Flex-items{flex-basis: flex; flex-grow: 0; flex-shrink: 1; align-self: center; order: 2;}
+Flex-grow:
+Determines how flex-items expand to fill extra space in a container based on a set of proportions. e.g, flex-grow: 0;{0(zero) is the default value} The flex-grow property calculates how flex-items
+can fill the extra space. Items grow based on their flex-grow value relative to the total.
+Flex-shrink:
+Determines how flex-items shrink relative to others in a container where there isn't enough space. e.g. flex-shrink: 1; {default value} if the flex-shrink value is set 0 on each of the flex-items
+then the flex-items don't shrink and therefore overflow the flex container. If the flex-shrink value is set to another value other than 0 then the items shrink based on their flex-shrink value
+relative  to the total.
+Align-self:
+Sets individual flex items alignment by overriding the flex containers default align-items value. e.g. align-self: flex-end; Other values include align-self: auto;{default value} align-self: stretch;
+align-self: flex-start; align-self: flex-end; align-self: center; {align-items: flex-end; align-self: baseline;}
+Order:
+Changes the visual order of flex items independent of their order in the HTML markup. e.g. order: 0;{default value}. Assuming you have 4 flex-items and you set their order numbers as order: -1;
+order: 0; order: 0; and order: 1; then they will be arranged in order from the lower value i.e. -1 to the higher value i.e. 1
+Flex wrap and align content:
+Pushes flex-items onto multiple lines instead of being forced to fit on a single line when they exceed the container. It works in both containers where the height of the container is set and where
+the height of the container is not. It is set on the flex container. e.g. flex-wrap: wrap; other values include nowrap{default value}, wrap wrap-reverse.
+Align-content:
+Controls the alignment of flex-items along the cross-axis when there are multiple rows of flex-items. It is set on the flex container. e.g. align-content: flex-start; other values include:
+stretch{default value}flex-start, flex-end, center, space-between and space-around. This property can only work when the flex-wrap: wrap; property has been set.
+flex-wrap guidance: {not often required}
+Wrapping is useful for simple linear layouts when elements need to wrap onto multiple lines.
+
+
+CSS GRID
+This is a two-dimensional layout model making it simple to arrange items in rows and columns.
+CSS Grid has two main components: 1. Grid container(parent) 2. Grid Items(children)
+Css Grid has two axis and the difference to flexbox is that we can't change the direction of the axis. 1. Column axis(vertical axis) 2. Row axis(horizontal axis)
+The Grid is divided into grid cells by grid lines.
+The grid item can be moved within the grid cell. It is possible to have a grid cell without a grid item.
+Grid lines define grid tracks{rows and columns}.
+Grid rows and columns can have spacing between them. The space between the rows is called the horizontal gap. The space between the columns is called the vertical gap.
+Display Grid:
+The display property on a container element will activate grid layout features on children elements. It is declared on the grid container(parent). e.g. display: grid;
+css grid guidance:
+Css Grid can be used for complex two-dimensional layouts.
+Grid is also commonly used for major sections.
+Grid is also commonly used for UI elements with consistent spacing in a one-dimensional row or column. This could also use flexbox.
+CSS GRID vs FLEXBOX:
+Flexbox:                                                                   Grid:
+Smaller UI                                                                 Larger UI
+display: flex;                                                             display: grid;
+One-dimensional(row or column)                                             Two-dimensional(row and column)
+Commonly used in navigation bars, footers, components(buttons,             Commonly used in complex-2D-layouts, feature sections and cards
+callouts, inside cards), hero sections and forms
+Grid columns and rows:
+Grid items will appear in a single column by default. The height of the grid container is sum of grid items.
+Grid template columns:
+Sets the number of columns and width of each. e.g. grid-template-columns: 100px(column 1 and its width) 200px(column 2 and its width);
+Grid template rows:
+Sets the number of rows and height of each. e.g. grid template rows: 50px(row 1 and its height) 100px(row 2 and its height) 200px(row 3 and its height) 300px(row 4 and its height)
+Fractional unit:
+This is the fraction available space in the grid container. e.g. grid-template-columns: 1fr 3fr 4fr;
+This is very commonly used in css grid.
+Fractional unit and rows:
+If height is set on a grid container, fr units proportionally distribute space to the grid items. e.g. grid-template-rows: 1fr 2fr 2fr;
+If no height is set on a grid container, fr units use the height of the grid items to set height and space on the grid container. The grid container scales based on grid items.
+Repeat function:
+Used to repeat rows or column dimensions when they are recurring. e.g. grid-template-columns: repeat(4{number of rows or columns we wish to define}, 1fr{size value});
+column and row guidance:
+Columns are often set with fr units and the width of grid container is usually not set but extends width of the page.
+The number of rows are not usually set but are automatically defined by the number of grid items. Grid container width extends full width of page.
+The height of the grid container is not usually set but defined by the sum of the height of the grid items. Height of grid container is sum of height of the content in the grid items.
+It is common to define grid layout for each row on section of the web page.
+Grid Gap:
+By default grid items are placed next to each other with no spacing between them.
+Gap property:
+The gap property creates space  between grid rows and columns. e.g. row-gap: 20px; column-gap: 40px;
+Another version of the gap property that can be used is gap: 40px; this is the value for row gap and column gap set in one go.
+gap guidance:
+Commonly used to space grid items in major sections.
+Commonly used for spacing in card layouts such as testimonials and features.
+Grid Cell Alignment:
+This is where grid items can be aligned inside grid cells if there is space available.
+Justify items:
+This is not justify-content which is used in flexbox,
+Aligns grid items inside a grid cell along the row axis. e.g. justify-items: start; other values include, justify-items: end; justify-items: center; justify-items: stretch;{default value}
+Align items:
+Used same as in flexbox.
+Aligns grid items inside a grid cell along the column axis. e.g. align-items: start; other values include,  align-items: end; align-items: center; align-items: stretch;{default value}
+alignment guidance:
+It is common to use grid alignment properties when one grid item is larger than another.
+it is common to use grid and flexbox in parallel to achieve more precise control of layout. A grid item can be a flex container.
+Grid Alignment:
+Entire grid tracks can be aligned and distributed when there is extra space in the grid container.
+Justify-content:
+Same as in flexbox.
+Aligns entire grid columns along the row axis. e.g. justify-content: space-evenly; Other values include, justify-content: start; justify-content: end; justify-content: center;
+justify-content: space-between; justify-content: space-around;
+Align Content:
+Same property used as in flexbox.
+Aligns entire grid rows along the column axis. e.g. align-content: center; other values include, align-content: start; align-content: end; align-content: center; align-content: space-between;
+align-content: space-around; align-content: space-evenly;
+Items vs Content:
+Justify items          Align items                                      Justify content          Align content
+Aligns grid items when grid cells have extra space.                     Aligns grid tracks when the grid itself has extra space.
+Row Axis               Column Axis                                      Row Axis                 Column Axis
+justify-items          align-items                                      justify-content          align-content
+start      end      center      stretch                                 start   end   center   space-around   space-evenly   space-between
+e.g. justify-items: center; align-items: end;                           e.g. justify-content: center;   align-content: end;
+Grid items:
+Placing Grid items:
+Grid items are automatically placed in a grid based on the order they appear in the HTML.
+Grid items can be moved to different cells. It is set on the grid item. e.g. grid-row: 1(start line) / 2(end line); other grid items move automatically when placing a grid item.
+                                            Also set on the grid item.  e.g. grid-column: 2(start line) / 3(end line);
+placing grid items guidance:
+Placing grid items is used to achieve specific layouts.
+Spanning Grid Cells:
+Grid-row and Grid-Column can be used to have grid items span multiple rows or columns. e.g. grid item 1 spanning along the row-axis - grid-column: 1 / 4;
+                                                                                       e.g. grid item 1 spanning along the column-axis - grid-row: 1(start line) / span 2(cells to span);
+spanning grid cells guidance:
+Grid cells can be spanned to create visually interesting designs.
+Aligning Grid items:
+Grid cell alignment can be overridden for individual items. This is not too common. Assuming a grid container with properties, justify-items: center; align-items: center; Grid item 2 can override the
+fore-mentioned properties of the container by justify-self: end; align-self: start; other values include, start, end, center and stretch{default value}.
+
+
+RESPONSIVE DESIGN:
+Intro to responsive design:
+There are a variety of devices with different screen sizes so webpages need to adapt for a more functional user experience. A webpage appears different between different devices such as a desktop, a laptop,
+a tablet and a mobile phone.
+Responsive design is powered by three main pillars: 1. Relative units like percentages and rems. 2. Fluid layouts, this is flexbox and grid. 3. Media Queries
+Media Queries:
+Applies styles to a webpage based on specific conditions. e.g. at-rule -> @media (max-width{condition}: 500px) { h2 {font-size: 14px;} (when page is less than 500px apply this rule)}
+Some global styles like color & fonts are applied no matter what the screen size is. These are defined outside media queries.
+The media queries are organized in descending order ensuring that the smaller screen is always last.
+Relative Units:
+Elements scale proportionally based on {parent container(percentages)} size or scalable {reference points(rems)}.
+Rems inside media query conditions:
+The rem value inside a media query condition(inside brackets) is always based on the {default browser font-size(16 px)}.
+It is better practice to use rem value inside media query conditions as opposed to pixels.
+Rems inside media queries:
+Rem values scale proportionally, adjusting both existing and new values based on the updated root font size. see examples below:
+Remember that the default browser font-size is 16px which is usually 1rem. Using the original root element html {font-size: 62.5%} -> 62.5% X 16px = 10px therefore 1rem = 10px. In the media query below:
+@media (max-width: 62.5rem) { html { font-size: 50%; }} For a max-width of 1000px which is the same as 62.5rem the font-size is reduced by 80% to 8px -> 50% X 16px = 8px.
+For Existing Properties Using Rems -> All properties using rems will automatically shrink to 80% of their original size.
+Foe New Properties Inside Media Query -> New properties added with rem will be based on new pixel value, not 10px.
+When adding new rem values inside a media query select values you would use for the base case and it will scale automatically. Don't worry about exact pixel values for each media query, focus on what you
+would do on the base case.
+Fluid Layouts:
+Using flexbox and css grid allow layouts to dynamically adjust in size and position easily.
+Breakpoints:
+These are a specific screen width where a webpage's layout changes.
+Selecting breakpoints:
+Selecting breakpoints for specific devices is impractical as there are too many to cater for.
+Knowing the ranges of common device screen sizes is helpful in thinking about breakpoints. There is no universal standard for these ranges.
+Ultimately, selecting breakpoints should be design-led and determined by observing where the layout naturally 'breaks'.
+When using max-width in media queries, there's no need to set a maximum range because styles will be applied automatically.
+Ranges to keep in mind: <---576px---><---768px---><---1024px---><---1280px---><---1536px--->
+                        XS          SM           MD            LG            XL           2XL   {XS-extra small SM-small MD-medium LG-large XL-extra large 2XL-twice extra large}
+                       PHONE       PHONE       TABLETS         SMALL        LARGE        LARGE
+                      PORTRAIT   LANDSCAPE                     LAPTOPS      LAPTOPS      SCREENS
+CSS & Physical pixels:
+A pixel is a single point of light on a digital display.
+Physical Pixels:
+A pixel does not have a fixed length and varies between screens.
+CSS Pixels:
+A CSS pixel has a length of 1/96 inch (0.0104 inch)
+Pixels in Dev Tools vs Devices:
+Pixel values in dev tools are not the same as device pixel values. dev tools -> css pixel, device -> physical pixel
+CSS pixels are scaled depending on screen resolutions.
+Scaling across different devices happens automatically.
+
+
+POSITIONING:
 
 
 
