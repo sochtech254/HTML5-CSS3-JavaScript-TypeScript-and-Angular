@@ -752,12 +752,98 @@ Scaling across different devices happens automatically.
 
 
 POSITIONING:
+This is a technique that gives you full control over the exact placement of elements on your page.
+Elements occupy their own designated 'slot' on the page which allows them to e surrounded by other elements.
+Elements are made up of two components i.e. slot - area designated for the element and the element itself.
+Position property:
+Determines how an element is positioned on the page. e.g. position: relative; other values include: static{default value}, relative, absolute, fixed and sticky.
+Static positioning:
+The element follows the normal document flow. e.g. position: static; -> default value
+Relative positioning:
+The element follows the normal document flow but can be offset relative to itself. e.g. position: relative; The element can move around relative to its original position. The slot remains.
+Other elements remain in position as the slot of the relatively positioned element remains present. The element with the position property set to relative is in its own 'layer' and can move around.
+To move the element around we use offset property.
+Offset property:
+This property is used to shift the element from its reference point. For this property to work, the position property has a value other than static. Offset property wouldn't work for regular elements
+because regular elements by default have a position property value of static.
+There are four offset properties e.g. top: 20px; means shifting the element 20px away from the top of the reference point. Other values include, bottom: 40px; left: 10px; right: 30px;
+Absolute positioning:
+The element is removed from the normal document flow. e.g. position: absolute; The entire slot of the element is removed from the webpage. This means that any element below it will occupy that space.
+The slot is removed and the elements below move in as the 'slot' is no longer present.
+When positioning an absolute positioned element, the reference point is the root html element.
+The reference point is the entire html root element. The reference point are the edges of the root html element. We can think of it as a single point with an x and y axis.
+More commonly, the reference point is set by the nearest ancestor with a non-static position. e.g. set position to relative on a much closer parent which kinda acts as an anchor point to reference the
+element we want to absolutely position.
+Fixed and Sticky Positioning:
+Fixed positioning:
+Absolute positioning, but the element remains fixed relative to the viewport and is unaffected by scrolling.
+Sticky positioning:
+The element is in normal flow until a certain scroll point when it then becomes fixed.
+positioning guidance:
+Absolute positioning is more commonly used than relative because it removes elements from the document flow because the slot is removed so no unexpected gaps in layout.
+Absolute positioning should be used as a last resort for very specific cases as it makes responsive design more challenging.
+Fixed positioning is used for elements that need to be absolute positioned but also need to remain visible when the user scrolls. e.g. chat windows
+Sticky positioning is ideal for nav-bars, as they stay at the top in normal flow and then become fixed when the user scrolls.
+Z-index and stacking context:
+Normal flow:
+Most web layouts have elements in the same 2D plane and do not overlap.
+Elements can overlap in the same plane with the stacking order being determined by the order they appear in html.
+Z-index:
+The z-index property controls the vertical stacking order of positioned elements. e.g. z-index: 2;
+Works only on positioned elements.
+Stacking context:
+A positioned element with z-index creates a new stacking context, where its children are stacked independently of other elements.
+Transform Property:
+Applies visual transformations to an element like scaling, rotating, translating and skewing. e.g. transform: scale(2, 0.5); other values include, scale(), skew(), rotate() and translate().
+scale:
+Resizes element horizontally and vertically. e.g. transform: scale(2, 0.5); 2 -> x-axis scale factor 0.5 -> y-axis scale factor
+skew:
+Distorts element by slanting it horizontally and vertically e.g. transform: skew(20deg, 50deg); 20deg -> x-axis slant angle 50deg -> y-axis slant angle
+rotate:
+Rotates element around its center. e.g. transform: rotate(45deg); 45deg -> angle
+translate:
+Moves element horizontally and vertically from its position. e.g. transform: translate(50%, -200px); 50% -> x-axis translation -200px -> y-axis translation
+transform guidance:
+Scale is often used when hovering over an image to create a dynamic visual effect.
+Translate is used on positioned modals to achieve precise centering within their containers.
+Translate is used on positioned alerts to achieve precise alignment in the top right corner.
 
 
-
-
-
-
-
+SHADOWS AND TRANSITIONS:
+How shadows work:
+Moving light in the same plane as the table moves the shadow horizontally and vertically on the floor.
+Moving light up and down creates a blur resulting in edges that appear soft or sharp.
+Shadow property:
+In CSS it looks like this: box-shadow: 10px -20px 5px 30px #6bb55c; 10px -> x-offset and since it is a positive value, it moves the shadow to the right and a negative value would move it to the left.
+-20px -> y-offset, moves the shadow vertically. Negative (-20px) moves the shadow up. Positive value moves the shadow down.
+5px -> blur-radius, which softens the edges of the shadow.
+30px -> spread radius, which enlarges the size of the shadow.
+#6bb55c -> this is the color of the shadow.
+The x-offset and y-offset values of the shadow property are always required. The other values blur-radius, spread-radius and color are optional.
+shadow guidance:
+Shadows can be used to add depth and dimensions to a design to create separation between UI elements.
+Shadows should be light, as darker shadows can create a harsh and unnatural appearance in the design.
+Smaller shadows are ideal for enhancing smaller components like buttons and cards which add subtle depth.
+Medium-sized shadows can be used for larger components, helping them stand out.
+Large shadows are used when an element should appear to be floating above the rest of the design.
+Flat design vs Shadow:
+Flat design uses borders and background colors to achieve separation instead of shadows.
+Shadows should not be used too often, as overuse can make a design look cluttered and overwhelming.
+Transitions:
+When an element moves between states the changes occur immediately.
+Transitions are used to create a smooth, gradual change to an element's properties when it undergoes a state change. e.g. transition: background-color 0.5s ease-in; The background-color is the property to
+undergo transition, 0.5s -> is the duration of transition and ease-in -> is the timing function
+The transition property is defined on the initial state and not on te pseudo-class.
+The property under transition defaults to all properties that are changing if not defined. The duration of transition is required and the timing function defaults to ease properties if not defined.
+Timing functions:
+Controls the speed of the animation.
+ease ->  Starts slowly, speeds up and then slows down. This is the default timing function.
+linear -> Consistent speed start to end
+ease-in -> Starts slowly and accelerates to the end
+ease-out -> Starts quickly and slows down towards the end
+ease-in-out -> Starts slowly, speeds up in the middle and slows down at the end.
+transitions guidance:
+Transitions on buttons add subtle visual feedback.
+Transitions can make card components 'pop'.
 
 

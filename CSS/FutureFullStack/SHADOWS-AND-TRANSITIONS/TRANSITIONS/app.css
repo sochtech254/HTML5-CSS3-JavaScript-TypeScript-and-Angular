@@ -1,0 +1,12 @@
+.card {
+    width: 500px;
+    height: 500px;
+    background-color: lightblue;
+    transition: background-color 2s, border-radius 3s;
+}
+
+.card:hover {
+    background-color: lightcoral;
+    border-radius: 50%;
+    border: 20px dashed green;
+}

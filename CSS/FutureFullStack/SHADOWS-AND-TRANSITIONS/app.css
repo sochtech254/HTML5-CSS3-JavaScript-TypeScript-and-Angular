@@ -1,0 +1,12 @@
+.container {
+    width: 400px;
+    height: 400px;
+    background-color: grey;
+    margin-top: 200px;
+    margin-left: 200px;
+    box-shadow: 50px -50px 10px 5px blue;
+    /* x-offset y-offset blur-radius spread-radius */
+    /* If you wish to give spread radius a significant value and none to blur-radius */
+    /* 50px -50px 0px 5px*/
+    /* The above is essential because the third value will always be blur-radius */
+}
