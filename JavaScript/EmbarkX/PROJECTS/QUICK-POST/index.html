@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>QuickPost</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>QuickPost</h1>
+        <div id="app">
+            <div id="postForm">
+                <label for="postTitle"></label>
+                <input type="text" id="postTitle" placeholder="Post Title" required>
+                <label for="postBody"></label>
+                <textarea id="postBody" placeholder="Post Content" required></textarea>
+                <button type="submit" id="createPost">Create Post</button>
+            </div>
+            <ul id="postList">
+
+            </ul>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
