@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>GreatStack</title>
+    </head>
+    <body>
+        <ul id="menu">
+            <li>Home</li>
+            <li>About</li>
+            <li>Blog</li>
+            <li>Project</li>
+        </ul>
+    </body>
+    <script>
+        let div = document.createElement("div");
+        div.innerHTML = "<p>Welcome to GreatStack</p>";
+        document.body.appendChild(div);
+        console.log(div);
+
+        div.id = "title";
+        div.className = "title";
+
+        let menu = document.getElementById("menu");
+        let list = document.createElement("li");
+        list.innerHTML = "Contact";
+
+        menu.appendChild(list);
+
+        console.log(menu.textContent);    // innerText can also be used. It will produce the same output.
+        // innerText produces only visible text i.e. text whose css display property has not been set to none. textContent produces all text.
+
+        menu.insertAdjacentHTML("beforeend", "<li>Services</li>");
+
+        let newNode = menu.cloneNode();    // try inputting boolean value true
+        console.log(newNode);
+
+        // menu.removeChild(menu.lastElementChild);
+    </script>
+</html>

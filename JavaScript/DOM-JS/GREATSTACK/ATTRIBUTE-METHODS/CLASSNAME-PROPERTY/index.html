@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 id="title" class="main message">GreatStack</h1>
+    </body>
+    <script>
+        let title = document.getElementById("title");
+
+        // title.className = "new";    // You can use the concatenation to print all classes including this one added  title.className += " new";
+        console.log(title);
+        console.log(title.className);
+
+        // classList property
+        title.classList.add("new", "new2");
+        console.log(title.classList);
+
+        title.classList.replace("message", "msg");
+        console.log(title.classList);
+
+        title.classList.remove("new", "new2");
+        console.log(title.classList);
+
+        console.log(title.classList.contains("new2"));
+        console.log(title.classList.contains("msg"));
+        console.log(title.classList);
+
+        title.classList.toggle("new2");
+        console.log(title.classList.contains("new2"));
+    </script>
+</html>

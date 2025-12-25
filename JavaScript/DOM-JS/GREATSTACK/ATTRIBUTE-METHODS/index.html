@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <label for="username"></label>
+        <input type="text" id="username" placeholder="username">
+    </body>
+    <script>
+        let inputBox = document.getElementById('username');
+
+        console.log(inputBox.attributes);
+        // getAttribute() method
+        console.log(inputBox.getAttribute('type'));
+        console.log(inputBox.getAttribute('placeholder'));
+
+        // setAttribute() method
+        inputBox.setAttribute('class', 'user');
+        console.log(inputBox);
+
+        // hasAttribute() method
+        console.log(inputBox.hasAttribute('class'));
+
+        // removeAttribute()
+        inputBox.removeAttribute('class');
+        console.log(inputBox.hasAttribute('class'));
+    </script>
+</html>

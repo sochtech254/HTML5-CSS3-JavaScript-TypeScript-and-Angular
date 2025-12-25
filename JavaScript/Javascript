@@ -188,3 +188,12 @@ Axios:
 This is a powerful HTTP client for making network requests in JavaScript.
 `axios.get` is used to make a GET request.
 `axios.post` is used to make a POST request.
+
+Asynchronous Programming:
+This is a process that allows an application to run a second set of instructions while focusing on its primary or basic process.
+Asynchronous programming has several benefits, including improved application performance, wide application to different coding languages, and better user experience.
+A few use cases for asynchronous programming include reduced inefficiencies from an application and efficient data collection.
+Promise:
+A promise is an assurance or guarantee that something will happen in the future. A person can promise another person a specific outcome or result. A Promise is an object
+that holds the future value of an async operation.
+Example: Requesting some data from a server, the promise, promises us to get that data which we can use in future.

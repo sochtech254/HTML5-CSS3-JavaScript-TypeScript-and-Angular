@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            input {
+                background-color: red;
+                font-size: 12px;
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="username"></label>
+        <input type="text" id="username" placeholder="Enter your name">
+    </body>
+    <script>
+        let inputBox = document.getElementById('username');
+
+        console.log(window.getComputedStyle(inputBox).getPropertyValue('font-size'));
+    </script>
+</html>

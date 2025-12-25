@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Event Listeners</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+
+            .boxes {
+                height: 40vh;
+                background-color: #21214c;
+                color: white;
+                border: 1px solid white;
+                border-radius: 10px;
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .hidden-content {
+                display: none;
+            }
+
+            .hidden-content.reveal-btn {
+                display: block;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1 id="main-heading">Event Listeners</h1>
+
+        <div class="container">
+            <div class="boxes box-1">
+                <h1 id="heading">Example 1</h1>
+                <button class="btn-1">Enter</button>
+            </div>
+            <div class="boxes box-2">
+                <h1 id="heading">Example 2</h1>
+                <button class="btn-2">Enter</button>
+            </div>
+            <div class="boxes box-3">
+                <h1 id="heading">Example 3</h1>
+                <button class="btn-3">Enter</button>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <button class="reveal-btn boxes">Reveal More</button>
+            <div class="hidden-content boxes">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut blanditiis cupiditate dolor facere hic perspiciatis quibusdam ut voluptatum.
+                Aliquid blanditiis deserunt non quaerat quibusdam suscipit tempora veniam vero. Ad, sapiente.
+            </div>
+        </div>
+    </body>
+    <script src="app.js"></script>
+</html>

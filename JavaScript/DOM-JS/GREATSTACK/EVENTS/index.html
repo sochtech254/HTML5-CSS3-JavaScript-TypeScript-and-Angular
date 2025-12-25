@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="container">
+            <!-- <button type="button"  onclick="console.log('Button Clicked!')">Click Here</button> -->
+            <!-- <button type="button"  onclick="console.log(event.type);">Click Here</button> -->
+            <!-- <button type="button"  onclick="console.log(event.target);">Click Here</button> -->
+            <!-- <button type="button"  onclick="console.log(this);">Click Here</button> -->
+            <!-- <button id="btn" type="button"  onclick="console.log(this.id);">Click Here</button> -->
+            <button type="button"  onclick="displayMsg()">Click Here</button>
+            <button id="btn1">Click Here</button>
+        </div>
+    </body>
+    <script>
+        function displayMsg() {
+            console.log("Button Clicked From Fn");
+        }
+
+        let button = document.getElementById("btn1");
+        button.onclick = () => {
+            console.log("Button Clicked From Arrow Fn");
+        }
+
+        // button.onclick = null;    // removes event handler
+
+        button.addEventListener("click", displayMsg);
+
+        button.removeEventListener("click", displayMsg);
+    </script>
+</html>

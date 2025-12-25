@@ -1,0 +1,68 @@
+DOM:
+The Document Object Model (DOM) is an application programming interface (API) used for manipulating content, style and structure of HTML documents.
+The DOM provides functions that allow you to add, remove, and modify parts of the document effectively.
+The DOM represents an HTML document as a tree of nodes.
+Different types of nodes include: <!DOCTYPE html>, <head> </head>, <title></title>, <body></body> <p></p> even texts within title,h1 and p tags are also nodes.
+Any node has relationships to other nodes in the DOM tree, and it is same as described in the traditional family tree. e.g. the <body></body> nodes is the child node of the <html></html> parent node.
+The <body></body> node is the sibling node of the <head></head> node since they share the same parent node the <html></html> node.
+
+Selecting Elements:
+getElementById() method -> returns an element object that represents an HTML element.
+getElementsByName() method ->
+getElementsByTagName() method -> accepts a tag name and returns a live HTMLCollection of elements.
+getElementsByClassName() method -> returns an array-like of objects of the child elements with a specified class name.
+querySelector() & querySelectorAll() -> allows you to select the first element that matches one or more CSS selectors.
+
+Traversing elements:
+To get the parent node of a specified node in the DOM tree, we can use the parentNode property.
+
+Manipulating elements:
+createElement() Method -> To create an HTML element, we use the createElement() method. The document.createElement() accepts an HTML tag name and returns a new Node with the Element type.
+appendChild() Method -> Use appendChild() method to add a node to the end of the list of child nodes of a specified parent node. The appendChild() can be used to move an existing child node to the
+new position within the document.
+textContent -> To get the text content of a node and its descendants, you use the textContent property.
+after() -> We can use after() method to insert one or more nodes after the element.
+append() -> same as appendChild() but can be used to add multiple elements unlike the appendChild() method.
+insertBefore() -> used to insert a new node before an existing node as a child node of a parent node.
+
+Event bubbling:
+Event starts at the most specific element and flows towards least specific element.
+
+Event capturing:
+Event starts at the least specific element and flows toward the most specific element.
+
+Event handler:
+Also known as event listener. This is a piece of code that will be executed when the event occurs.
+When the event occurs, the web browser passes an event object to the event handler.
+"this" keyword inside the event handler refers to target element.
+addEventListener() method will register an event handler.
+removeEventListener() method will remove an event handler.
+
+Events:
+mousemove -> event fires repeatedly when you move the mouse cursor around the element.
+mousedown -> event fires when you press the mouse button on the element.
+mouseup -> event fires when you release the mouse button on the element.
+mouseover -> event fires when the cursor move from outside to inside the boundaries of the element.
+mouseout -> event fires when the cursor is over an element and then moves to another element.
+keydown -> event fires when you press a key on the keyboard and fires repeatedly while you're holding down the key.
+keyup -> event fires when you release a key on the keyboard.
+keypress -> event fires when you press a character on keyboard like a,b,c... it fires repeatedly while you hold down the key on the keyboard.
+scroll -> event fires when you scroll a document or on element, the scroll events fire.
+
+Event propagation:
+There are three phases:
+1. Event Capturing
+2. Target
+3. Event Bubbling
+
+Event Delegation:
+It allows users to append a SINGLE event listener to a parent element that adds it to all of its present AND future descendants that match a selector.
+
+There are three ways to assign event handler:
+HTML Event Handler Attributes
+
+
+
+
+
+

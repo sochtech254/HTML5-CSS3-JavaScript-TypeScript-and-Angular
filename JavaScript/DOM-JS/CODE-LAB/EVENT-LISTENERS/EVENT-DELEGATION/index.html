@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            html {
+                height: 100vh;
+                background-color: #21214c;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            ul {
+                list-style-type: none;
+                border: 10px solid #fff;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100px;
+                padding: 100px;
+            }
+
+            li {
+                border: 1px solid #fff;
+                padding: 5px;
+                margin: 5px;
+                width: max(100%, 100%);
+                font-size: large;
+            }
+
+            li:hover {
+                cursor: pointer;
+            }
+
+            li:visited, li:active {
+                background-color: lightgray;
+                transition: background-color;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <ul id="sports">
+            <li id="football">Football</li>
+            <li id="basketball">Basketball</li>
+            <li id="boxing">Boxing</li>
+            <li id="tennis">Tennis</li>
+            <li id="golf">Golf</li>
+        </ul>
+
+    </body>
+    <script src="app.js"></script>
+</html>

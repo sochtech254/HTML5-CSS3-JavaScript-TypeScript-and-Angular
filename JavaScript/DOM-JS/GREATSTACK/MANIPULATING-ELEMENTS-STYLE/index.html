@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <label for="username"></label>
+        <input type="text" id="username" placeholder="Enter your name" style="background-color: red; font-size: 20px;">
+    </body>
+    <script>
+        let inputBox = document.getElementById('username');
+        console.log(inputBox.style);
+        console.log(inputBox.style.backgroundColor);
+        inputBox.style.padding = "10px";
+        console.log(inputBox);
+
+        // cssText
+        inputBox.style.cssText += "width:200px; height:30px;";
+        console.log(inputBox);
+    </script>
+</html>
