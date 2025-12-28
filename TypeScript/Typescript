@@ -1,0 +1,7 @@
+To install Typescript:
+npm install -g typescript
+To produce tsconfig.json in your typescript project:
+tsc --init
+
+Any variable assigned to any data type, essentially tells typescript compiler to disable type-checking for that variable, allowing it to hold values of any type.
+Avoid using any type whenever possible.

@@ -1,0 +1,1 @@
+let direction: "left" | "right" | "up" | "down";
