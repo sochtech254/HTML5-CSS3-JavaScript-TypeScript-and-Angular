@@ -1,3 +1,95 @@
+CSS:
+What is CSS?
+Cascading Style Sheets
+Cascading{How to style an element when several rules apply] Style{The various styles that can be applied to HTMl elements} Sheets{Their own documents which can be linked to HTML files.}
+Used to control the presentation and layout of HTML.
+
+The CSS Box Model:
+CSS views every HTML element as if it has an invisible Box around it.
+All HTML elements are by default either a block or inline element.
+Block elements -> Start on a new line. Take up the full width of a page. examples include: <h1> <p> <ul> <li>
+Inline elements -> Does not start on a new line. Only occupies width of their content. examples include: <a> <img> <br> <input>
+Knowing whether an HTML element is a block or inline element s crucial, as it significantly influences CSS styling and layout.
+
+CSS Properties:
+Three categories of HTML document to style:
+Content -> Inside the box e.g. font-size, font-weight, background-color
+Box -> The Box itself e.g. width and height, border, margin
+layout -> Where boxes go e.g. flexbox, grid
+
+CSS Rules:
+h1 { font-size: 20px; color: blue;}
+h1 -> selector, {} -> curly braces, font-size & color -> property, : -> colon, 20px & blue -> value, ; -> semi-colon
+property + value -> declaration
+multiple declarations inside curly braces is called declaration block. The declaration block forms a css rule for the h1 element above.
+
+Methods for including CSS:
+Inline -> not recommended
+Internal -> not recommended
+External -> best practice
+Inline CSS:
+Styling is applied directly to individual HTML elements. e.g. <h1 style="color: blue;">Welcome aboard</h1>
+Internal CSS:
+Styling a single HTML document using the style element e.g. <style> h1 {font-size: 20px; color: blue; } </style>
+External CSS:
+Styles are in a separate CSS file and linked to the HTML documents. e.g. index.html <head> <link rel="stylesheet" href="app.css"> </head>
+
+
+Text Properties:
+Text properties can be categorized into five:
+styling, spacing, family, color, size
+
+styling:
+font-weight:
+Sets the thickness of text characters e.g. font-weight: bold; It is more common to use numerical values which range from 100 to 900.
+400 -> considered normal{default for most text}, 500 -> considered medium, 700 -> considered bold{default for headings}
+
+font-weight guidance:
+Headings should be 500-900 and other text 300-400
+
+Text-decoration:
+Sets decorative lines on text. e.g. text-decoration: underline;
+Other values include: line-through, overline, underline{default for anchor elements} and none{default for most elements}
+We can give our text-decoration a color say for example blue e.g. text-decoration: underline blue;
+color values can be named, hex or rgb.
+We can also add a style value e.g. text-decoration: underline blue dotted;
+Other text-decoration style values include double, dotted, wavy, solid{default value} and dashed.
+
+text-decoration guidance:
+Always remove underline from anchor tags and very rarely use text-decoration
+
+Font-Style:
+Sets the style of a font. e.g. font-style: italic;
+Other values include: normal{default value}, italic, oblique, oblique 10deg
+
+font-style guidance:
+Can sometimes be used to draw attention. You can preferably use weight and color to draw attention.
+
+Text-transform:
+Sets the capitalisation of text. e.g. text-transform: uppercase;
+Other values include: none{default}, uppercase, lowercase and capitalize{first letter of each word is capitalised.}
+
+text-transform guidance:
+It is best to stick with sentence case. First letter of first word in a sentence is uppercase.
+Bloggers, edgy brands & studios will sometimes use uppercase to create a larger visual impact and appear daring.
+
+List-Style:
+Sets the style of a list. e.g. list-style: disc;
+Other values include: none, disc{default for unordered lists}, circle, square, decimal{default for ordered lists}
+
+list-style guidance:
+Always set list-style to none when they are used for structural purposes.
+
+TEXT-SPACING:
+Text-Align:
+Specifies the horizontal alignment of text within an element. e.g. text-align: center;
+Other values include: left{default value}, right, center and justify.
+left -> Considered easier to read for paragraphs of text.
+center -> Often used for headings and shorter pieces of text.
+justify -> Every line in a paragraph takes up full width of containing box.
+For block elements, text can be aligned within the box model because the block elements occupy the full width of the page. For inline elements, this property does not apply because inline elements
+occupy the full width of the content. Hence no space for text to move.
+
 Text-align guidance:
 Don't justify text, long blocks of text should be left-aligned and do not center large blocks of text.
 
